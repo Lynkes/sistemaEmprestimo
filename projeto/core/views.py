@@ -10,7 +10,7 @@ class HomeRedirectView(LoginRequiredMixin, RedirectView):
     def get_redirect_url(self, **kwargs):
         if self.request.user.tipo == 'ADMINISTRADOR':
             return reverse('home')
-        elif self.request.user.tipo == 'PROFESSOR':
+        elif self.request.user.tipo == 'USUARIO':
             return reverse('home')
 
 
