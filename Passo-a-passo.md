@@ -48,7 +48,7 @@ virtualenv -p python3 venv
 source venv/bin/activate
 
 #Caso esteja no Windows (principalmente o 10), para criar e ativar a venv, use estes passos
-python3 -m venv venv 
+python -m venv venv 
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
 venv\Scripts\activate 
 
