@@ -25,7 +25,18 @@
   			{% for emprestimo in object_list %}
 				<tr>
 					<td>{{ emprestimo.locador }}</td>
-					<td>{{ emprestimo.objeto }}</td>
+					<td>
+						{% for c in emprestimo.objeto.all %}
+							{{ c.descricao }}
+							{% if forloop.last %}
+							.
+							{% else %}
+							,
+							{% endif %}
+						{% empty %}
+							<i>Nenhum objeto foi pego emprestado</i>
+						{% endfor %}
+					</td>
 					<td>{{ emprestimo.dataEmprestimo|date:'d/m/Y' }}</td>
 					<td>
 						{% if emprestimo.devolvido %}
