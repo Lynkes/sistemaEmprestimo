@@ -18,7 +18,7 @@ class Emprestimo(models.Model):
     objects = models.Manager()
     
     class Meta:
-        ordering            =   ['locador']
+        ordering            =   ['-em_emprestimo', 'locador']
         verbose_name        =   ('emprestimo')
         verbose_name_plural =   ('emprestimos')
         unique_together     =   [['locador','data_emprestimo']]
