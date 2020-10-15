@@ -11,7 +11,7 @@ class Emprestimo(models.Model):
     locador = models.ForeignKey('usuario.Usuario', verbose_name= 'Locador', on_delete=models.PROTECT)
     objeto = models.ManyToManyField('objeto.Objeto', verbose_name= 'Objeto(s) emprestado(s)')
     data_emprestimo = models.DateTimeField(_('Data do empréstimo '), max_length=10, help_text='Use dd/mm/aaaa')
-    devolvido = models.BooleanField(_('Já foi devolvido? '), default=False)
+    em_emprestimo = models.BooleanField(_('Selecione se o objeto estiver emprestado '), default=False)
 
     slug = models.SlugField('Hash',max_length= 200, null=True, blank=True)
     

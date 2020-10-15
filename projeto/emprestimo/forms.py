@@ -11,5 +11,5 @@ class EmprestimoForm(forms.ModelForm):
 
     class Meta:
         model = Emprestimo
-        fields = ['locador', 'objeto', 'data_emprestimo', 'devolvido']
+        fields = ['locador', 'objeto', 'data_emprestimo', 'em_emprestimo']
     

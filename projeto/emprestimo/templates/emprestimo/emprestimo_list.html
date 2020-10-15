@@ -16,7 +16,7 @@
 			<th>Locador</th>
 			<th>Objeto(s)</th>
 			<th>Data de empréstimo</th>
-			<th>Devolvido?</th>
+			<th>Em empréstimo?</th>
   			<th class="text-center">Editar</th>
   			<th class="text-center">Excluir</th>
   		</thead>
@@ -39,7 +39,7 @@
 					</td>
 					<td>{{ emprestimo.data_emprestimo|date:'d/m/Y' }}</td>
 					<td>
-						{% if emprestimo.devolvido %}
+						{% if emprestimo.em_emprestimo %}
 							Sim
 						{% else %}
 							Não
