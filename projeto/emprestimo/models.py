@@ -10,8 +10,8 @@ from utils.gerador_hash import gerar_hash
 class Emprestimo(models.Model): 
     locador = models.ForeignKey('usuario.Usuario', verbose_name= 'Locador', on_delete=models.PROTECT)
     objeto = models.ManyToManyField('objeto.Objeto', verbose_name= 'Objeto(s) emprestado(s)')
-    dataEmprestimo = models.DateTimeField(_('Data do empréstimo '), max_length=10, help_text='Use dd/mm/aaaa')
-    devolvido = models.BooleanField(_('Já foi devolvido? '), default='Não')
+    data_emprestimo = models.DateTimeField(_('Data do empréstimo '), max_length=10, help_text='Use dd/mm/aaaa')
+    devolvido = models.BooleanField(_('Já foi devolvido? '), default=False)
 
     slug = models.SlugField('Hash',max_length= 200, null=True, blank=True)
     
@@ -21,7 +21,7 @@ class Emprestimo(models.Model):
         ordering            =   ['locador']
         verbose_name        =   ('emprestimo')
         verbose_name_plural =   ('emprestimos')
-        unique_together     =   [['locador','dataEmprestimo']]
+        unique_together     =   [['locador','data_emprestimo']]
 
     def __str__(self):
         return "Objeto: %s. Pessoa: %s." % (self.objeto, self.locador)

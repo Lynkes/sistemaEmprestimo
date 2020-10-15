@@ -12,16 +12,16 @@ from django.urls import reverse
 from utils.decorators import LoginRequiredMixin,  StaffRequiredMixin
 
 from .models import Emprestimo
+from .forms import EmprestimoForm
 
 
 class EmprestimoListView(LoginRequiredMixin,  StaffRequiredMixin, ListView):
     model = Emprestimo
-    fields = ['locador', 'objeto', 'dataEmprestimo', 'devolvido']
 
 
 class EmprestimoCreateView(LoginRequiredMixin,  StaffRequiredMixin, CreateView):
     model = Emprestimo
-    fields = ['locador', 'objeto', 'dataEmprestimo', 'devolvido']
+    form_class = EmprestimoForm
     success_url = 'emprestimo_list'
     
     def get_success_url(self):
@@ -31,7 +31,7 @@ class EmprestimoCreateView(LoginRequiredMixin,  StaffRequiredMixin, CreateView):
 
 class EmprestimoUpdateView(LoginRequiredMixin,  StaffRequiredMixin, UpdateView):
     model = Emprestimo
-    fields = ['locador', 'objeto', 'dataEmprestimo', 'devolvido']
+    form_class = EmprestimoForm
     success_url = 'emprestimo_list'
     
     def get_success_url(self):
