@@ -16,13 +16,23 @@ from .models import Objeto
 
 class ObjetoListView(LoginRequiredMixin,  StaffRequiredMixin, ListView):
     model = Objeto
-    fields = ['codigo', 'tipo', 'descricao', 'valor']
 
 
 class ObjetoCreateView(LoginRequiredMixin,  StaffRequiredMixin, CreateView):
     model = Objeto
-    fields = ['codigo', 'tipo', 'descricao', 'valor']
+    fields = ['codigo', 'tipo', 'descricao', 'valor', 'arquivo_foto']
     success_url = 'objeto_list'
+    
+    def form_valid(self, form):
+        limite_mb = 3 * 1024 * 1024
+        obj = form.instance
+        
+        if (not obj.arquivo_foto or (obj.arquivo_foto and obj.arquivo_foto.file.size <= limite_mb)):
+            form.save()
+            return super(ObjetoCreateView, self).form_valid(form)
+        else:
+            messages.danger(self.request, 'Sistema somente suporta 3 Mb na foto!')
+            return super(ObjetoCreateView, self).form_invalid(form)
     
     def get_success_url(self):
         messages.success(self.request, 'Objeto pessoal cadastrado com sucesso na plataforma!')
@@ -31,8 +41,19 @@ class ObjetoCreateView(LoginRequiredMixin,  StaffRequiredMixin, CreateView):
 
 class ObjetoUpdateView(LoginRequiredMixin,  StaffRequiredMixin, UpdateView):
     model = Objeto
-    fields = ['codigo', 'tipo', 'descricao', 'valor']
+    fields = ['codigo', 'tipo', 'descricao', 'valor', 'arquivo_foto']
     success_url = 'objeto_list'
+    
+    def form_valid(self, form):
+        limite_mb = 3 * 1024 * 1024
+        obj = form.instance
+        
+        if (not obj.arquivo_foto or (obj.arquivo_foto and obj.arquivo_foto.file.size <= limite_mb)):
+            form.save()
+            return super(ObjetoUpdateView, self).form_valid(form)
+        else:
+            messages.danger(self.request, 'Sistema somente suporta 3 Mb na foto!')
+            return super(ObjetoUpdateView, self).form_invalid(form)
     
     def get_success_url(self):
         messages.success(self.request, 'Dados do objeto pessoal atualizados com sucesso na plataforma!')

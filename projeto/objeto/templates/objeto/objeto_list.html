@@ -17,6 +17,7 @@
 			<th>Tipo</th>
 			<th>Descrição</th>
 			<th>Valor</th>
+			<th>Foto</th>
   			<th class="text-center">Editar</th>
   			<th class="text-center">Excluir</th>
   		</thead>
@@ -30,6 +31,17 @@
 					<td>
 						{% if obj.valor %}
 							{{ obj.valor }}
+						{% endif %}
+					</td>
+					<td>
+						{% if obj.arquivo_foto %}
+							<a href="{{ obj.arquivo_foto.url }}" target="_blank" class="btn btn-sm btn-success">
+								{% bootstrap_icon 'download' %}
+							</a>
+						{% else %}
+							<a href="" target="_blank" class="btn btn-sm btn-warning disabled">
+								{% bootstrap_icon 'download' %}
+							</a>
 						{% endif %}
 					</td>
 					<td class="text-center">
