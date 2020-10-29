@@ -15,7 +15,7 @@ from .models import Emprestimo
 from .forms import EmprestimoForm
 
 
-class EmprestimoListView(LoginRequiredMixin,  StaffRequiredMixin, ListView):
+class EmprestimoListView(LoginRequiredMixin,  ListView):
     model = Emprestimo
 
 

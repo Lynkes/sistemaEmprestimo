@@ -23,35 +23,37 @@
 
   		<tbody>
   			{% for emprestimo in object_list %}
-				<tr>
-					<td>{{ emprestimo.locador }}</td>
-					<td>
-						{% for c in emprestimo.objeto.all %}
-							{{ c.descricao }}
-							{% if forloop.last %}
-							.
+				{% if user.tipo == 'ADMINISTRADOR' or user.nome == emprestimo.locador.nome %}				
+					<tr>
+						<td>{{ emprestimo.locador }}</td>
+						<td>
+							{% for c in emprestimo.objeto.all %}
+								{{ c.descricao }}
+								{% if forloop.last %}
+								.
+								{% else %}
+								,
+								{% endif %}
+							{% empty %}
+								<i>Nenhum objeto foi pego emprestado</i>
+							{% endfor %}
+						</td>
+						<td>{{ emprestimo.data_emprestimo|date:'d/m/Y' }}</td>
+						<td>
+							{% if emprestimo.em_emprestimo %}
+								Sim
 							{% else %}
-							,
+								Não
 							{% endif %}
-						{% empty %}
-							<i>Nenhum objeto foi pego emprestado</i>
-						{% endfor %}
-					</td>
-					<td>{{ emprestimo.data_emprestimo|date:'d/m/Y' }}</td>
-					<td>
-						{% if emprestimo.em_emprestimo %}
-							Sim
-						{% else %}
-							Não
-						{% endif %}
-					</td>
-					<td class="text-center">
-				          {% bootstrap_button content='' href=emprestimo.get_absolute_url button_type='link' icon='edit' button_class='btn btn-primary' size='sm' %}
-				    </td>
-				    <td class="text-center">
-				          {% bootstrap_button content='' href=emprestimo.get_delete_url button_type='link' icon='trash' button_class='btn btn-danger' size='sm' %}
-				    </td>
-				</tr>
+						</td>
+						<td class="text-center">
+							{% bootstrap_button content='' href=emprestimo.get_absolute_url button_type='link' icon='edit' button_class='btn btn-primary' size='sm' %}
+						</td>
+						<td class="text-center">
+							{% bootstrap_button content='' href=emprestimo.get_delete_url button_type='link' icon='trash' button_class='btn btn-danger' size='sm' %}
+						</td>
+					</tr>
+				{% endif %}
 			{% endfor %}
   		</tbody>
 	</table>

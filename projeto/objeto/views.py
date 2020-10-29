@@ -14,7 +14,7 @@ from utils.decorators import LoginRequiredMixin,  StaffRequiredMixin
 from .models import Objeto
 
 
-class ObjetoListView(LoginRequiredMixin,  StaffRequiredMixin, ListView):
+class ObjetoListView(LoginRequiredMixin, ListView):
     model = Objeto
 
 
