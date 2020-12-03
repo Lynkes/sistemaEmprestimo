@@ -34,6 +34,7 @@ AUTH_USER_MODEL = 'usuario.Usuario'
 # Application definition
 
 INSTALLED_APPS = [
+    'core',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,10 +42,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrap3',
-    'core',
+    
     'emprestimo',
     'objeto',
     'usuario',
+    'mail_templated',
 ]
 
 MIDDLEWARE = [
