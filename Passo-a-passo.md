@@ -167,6 +167,27 @@ python manage.py makemigrations core
 
 python manage.py migrate core
 
+
+### criar o arquivo .env com as variaveis de ambiente que serao utilizadas pelo arquivo settings.py em projeto
+SECRET_KEY=-h24j2z74lh-*fp5!hilcoidhi*w1)%%j(v_&k%(7r8t=#r-qb
+
+DEBUG=True
+
+STATIC_URL=/static/
+
+#DATABASE_URL=mysql://usuario:senha@127.0.0.1:3306/nomeBanco_db
+DOMINIO_URL='localhost'
+EMAIL_ADMINISTRACAO='usuario@dominio.com'
+
+EMAIL_BACKEND=django.core.mail.backends.smtp.EmailBackend
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'usuario@ufn.edu.br'
+EMAIL_HOST_PASSWORD = 'senha'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+EMAIL_USE_STARTTLS = False
+
 ### neste ponto a sua home já pode ser exibida no navegador
 
 ### rodando o servidor web de desenvolvimento (dentro do diretório projeto)
