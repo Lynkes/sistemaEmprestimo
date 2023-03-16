@@ -1,7 +1,7 @@
 @title Sistema Emprestimo
 @echo off
 
-set inst_dir=F:\
+set inst_dir=C:\
 cd /d "%inst_dir%"
 
 if not exist "sistemaEmprestimo\" (
