@@ -6,5 +6,5 @@ Projeto da disciplina Programção Python-Django da UFN, curso de Sistemas de In
 2. Install [git](https://git-scm.com/download/win).
 3. Download the stable-diffusion-webui repository, for example by running `git clone https://github.com/Lynkes/sistemaEmprestimo.git`.
   Or [CLICK HERE](https://raw.githubusercontent.com/Lynkes/sistemaEmprestimo/master/AUTO-Install.bat) 
-  right click anywere and save as 'AUTO-Install.bat' without the ".txt" at the end.
+  right click anywhere and save as 'AUTO-Install.bat' without the ".txt" at the end.
 6. Run `AUTO-Install.bat` from Windows Explorer as normal, non-administrator, user.
