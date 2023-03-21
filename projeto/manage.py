@@ -48,13 +48,13 @@ def run_pip(args, desc=None):
 def prepare_environment():
     global skip_install
 
-    requirements_file = os.environ.get('REQS_FILE', "requirements.txt")
+    requirements_file = os.environ.get('REQS_FILE', "requirements_versions.txt")
 
     print(f"Python {sys.version}")
 
     if not os.path.isfile(requirements_file):
         requirements_file = os.path.join(script_path, requirements_file)
-    run_pip(f"install -r \"{requirements_file}\"", "requirements for Web UI")
+    run_pip(f"install -r \"{requirements_file}\"", "requirements for sistemaEmprestimo WEB UI")
 
 
 if __name__ == "__main__":

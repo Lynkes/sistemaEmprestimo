@@ -1,12 +1,11 @@
-from django.conf.urls import url
-
+from django.urls import include, re_path
 from .views import ObjetoListView, ObjetoCreateView
 from .views import ObjetoUpdateView, ObjetoDeleteView
 
 
 urlpatterns = [
-	url(r'list/$', ObjetoListView.as_view(), name='objeto_list'),
-	url(r'cad/$', ObjetoCreateView.as_view(), name='objeto_create'),
-	url(r'(?P<pk>\d+)/$', ObjetoUpdateView.as_view(), name='objeto_update'),
-	url(r'(?P<pk>\d+)/delete/$', ObjetoDeleteView.as_view(), name='objeto_delete'), 
+	re_path(r'list/$', ObjetoListView.as_view(), name='objeto_list'),
+	re_path(r'cad/$', ObjetoCreateView.as_view(), name='objeto_create'),
+	re_path(r'(?P<pk>\d+)/$', ObjetoUpdateView.as_view(), name='objeto_update'),
+	re_path(r'(?P<pk>\d+)/delete/$', ObjetoDeleteView.as_view(), name='objeto_delete'), 
 ]
