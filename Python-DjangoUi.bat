@@ -50,6 +50,7 @@ set ACCELERATE="%VENV_DIR%\Scripts\accelerate.exe"
 if EXIST %ACCELERATE% goto :accelerate_launch
 
 :launch
+%PYTHON% projeto\manage.py migrate %*
 %PYTHON% projeto\manage.py runserver %*
 pause
 exit /b
