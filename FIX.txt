@@ -1,0 +1,103 @@
+?: (2_0.W001) Your URL pattern '(?P<pk>\d+)/$' [name='emprestimo_update'] has a route that contains '(?P<', begins with a '^', or ends with a '$'. This was likely an oversight when migrating to django.urls.path().
+?: (2_0.W001) Your URL pattern '(?P<pk>\d+)/$' [name='objeto_update'] has a route that contains '(?P<', begins with a '^', or ends with a '$'. This was likely an oversight when migrating to django.urls.path().
+?: (2_0.W001) Your URL pattern '(?P<pk>\d+)/' [name='usuario_update'] has a route that contains '(?P<', begins with a '^', or ends with a '$'. This was likely an oversight when migrating to django.urls.path().
+?: (2_0.W001) Your URL pattern '(?P<pk>\d+)/delete/$' [name='emprestimo_delete'] has a route that contains '(?P<', begins with a '^', or ends with a '$'. This was likely an oversight when migrating to django.urls.path().
+?: (2_0.W001) Your URL pattern '(?P<pk>\d+)/delete/$' [name='objeto_delete'] has a route that contains '(?P<', begins with a '^', or ends with a '$'. This was likely an oversight when migrating to django.urls.path().
+?: (2_0.W001) Your URL pattern '(?P<pk>\d+)/delete/' [name='usuario_delete'] has a route that contains '(?P<', begins with a '^', or ends with a '$'. This was likely an oversight when migrating to django.urls.path().
+?: (2_0.W001) Your URL pattern '^$' [name='home_redirect'] has a route that contains '(?P<', begins with a '^', or ends with a '$'. This was likely an oversight when migrating to django.urls.path().
+?: (2_0.W001) Your URL pattern '^about$' [name='about'] has a route that contains '(?P<', begins with a '^', or ends with a '$'. This was likely an oversight when migrating to django.urls.path().
+?: (2_0.W001) Your URL pattern '^accounts/' has a route that contains '(?P<', begins with a '^', or ends with a '$'. This was likely an oversight when migrating to django.urls.path().
+?: (2_0.W001) Your URL pattern '^admin/' has a route that contains '(?P<', begins with a '^', or ends with a '$'. This was likely an oversight when migrating to django.urls.path().
+?: (2_0.W001) Your URL pattern '^home$' [name='home'] has a route that contains '(?P<', begins with a '^', or ends with a '$'. This was likely an oversight when migrating to django.urls.path().
+?: (2_0.W001) Your URL pattern 'cad/$' [name='emprestimo_create'] has a route that contains '(?P<', begins with a '^', or ends with a '$'. This was likely an oversight when migrating to django.urls.path().
+?: (2_0.W001) Your URL pattern 'cad/$' [name='objeto_create'] has a route that contains '(?P<', begins with a '^', or ends with a '$'. This was likely an oversight when migrating to django.urls.path().
+?: (2_0.W001) Your URL pattern 'list/$' [name='emprestimo_list'] has a route that contains '(?P<', begins with a '^', or ends with a '$'. This was likely an oversight when migrating to django.urls.path().
+?: (2_0.W001) Your URL pattern 'list/$' [name='objeto_list'] has a route that contains '(?P<', begins with a '^', or ends with a '$'. This was likely an oversight when migrating to django.urls.path().
+?: (2_0.W001) Your URL pattern 'register/(?P<slug>[-\w\d]+)/activate/' [name='usuario_register_activate'] has a route that contains '(?P<', begins with a '^', or ends with a '$'. This was likely an oversight when migrating to django.urls.path().
+emprestimo.Emprestimo: (models.W042) Auto-created primary key used when not defining a primary key type, by default 'django.db.models.AutoField'.
+        HINT: Configure the DEFAULT_AUTO_FIELD setting or the EmprestimoConfig.default_auto_field attribute to point to a subclass of AutoField, e.g. 'django.db.models.BigAutoField'.
+objeto.Objeto: (models.W042) Auto-created primary key used when not defining a primary key type, by default 'django.db.models.AutoField'.
+        HINT: Configure the DEFAULT_AUTO_FIELD setting or the ObjetoConfig.default_auto_field attribute to point to a subclass of AutoField, e.g. 'django.db.models.BigAutoField'.
+usuario.Usuario: (models.W042) Auto-created primary key used when not defining a primary key type, by default 'django.db.models.AutoField'.
+        HINT: Configure the DEFAULT_AUTO_FIELD setting or the UsuarioConfig.default_auto_field attribute to point to a subclass of AutoField, e.g. 'django.db.models.BigAutoField'.
+
+System check identified 19 issues (0 silenced).
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "F:\sistemaEmprestimo\venv\lib\site-packages\pymysql\connections.py", line 613, in connect
+    sock = socket.create_connection(
+  File "C:\Users\pedro\AppData\Local\Programs\Python\Python310\lib\socket.py", line 845, in create_connection
+    raise err
+  File "C:\Users\pedro\AppData\Local\Programs\Python\Python310\lib\socket.py", line 833, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\sistemaEmprestimo\venv\lib\site-packages\django\db\backends\base\base.py", line 282, in ensure_connection
+    self.connect()
+  File "F:\sistemaEmprestimo\venv\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "F:\sistemaEmprestimo\venv\lib\site-packages\django\db\backends\base\base.py", line 263, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "F:\sistemaEmprestimo\venv\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "F:\sistemaEmprestimo\venv\lib\site-packages\django\db\backends\mysql\base.py", line 247, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "F:\sistemaEmprestimo\venv\lib\site-packages\pymysql\connections.py", line 353, in __init__
+    self.connect()
+  File "F:\sistemaEmprestimo\venv\lib\site-packages\pymysql\connections.py", line 664, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\pedro\AppData\Local\Programs\Python\Python310\lib\threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "C:\Users\pedro\AppData\Local\Programs\Python\Python310\lib\threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "F:\sistemaEmprestimo\venv\lib\site-packages\django\utils\autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "F:\sistemaEmprestimo\venv\lib\site-packages\django\core\management\commands\runserver.py", line 137, in inner_run
+    self.check_migrations()
+  File "F:\sistemaEmprestimo\venv\lib\site-packages\django\core\management\base.py", line 564, in check_migrations
+    executor = MigrationExecutor(connections[DEFAULT_DB_ALIAS])
+  File "F:\sistemaEmprestimo\venv\lib\site-packages\django\db\migrations\executor.py", line 18, in __init__
+    self.loader = MigrationLoader(self.connection)
+  File "F:\sistemaEmprestimo\venv\lib\site-packages\django\db\migrations\loader.py", line 58, in __init__
+    self.build_graph()
+  File "F:\sistemaEmprestimo\venv\lib\site-packages\django\db\migrations\loader.py", line 235, in build_graph
+    self.applied_migrations = recorder.applied_migrations()
+  File "F:\sistemaEmprestimo\venv\lib\site-packages\django\db\migrations\recorder.py", line 81, in applied_migrations
+    if self.has_table():
+  File "F:\sistemaEmprestimo\venv\lib\site-packages\django\db\migrations\recorder.py", line 57, in has_table
+    with self.connection.cursor() as cursor:
+  File "F:\sistemaEmprestimo\venv\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "F:\sistemaEmprestimo\venv\lib\site-packages\django\db\backends\base\base.py", line 323, in cursor
+    return self._cursor()
+  File "F:\sistemaEmprestimo\venv\lib\site-packages\django\db\backends\base\base.py", line 299, in _cursor
+    self.ensure_connection()
+  File "F:\sistemaEmprestimo\venv\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "F:\sistemaEmprestimo\venv\lib\site-packages\django\db\backends\base\base.py", line 281, in ensure_connection
+    with self.wrap_database_errors:
+  File "F:\sistemaEmprestimo\venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "F:\sistemaEmprestimo\venv\lib\site-packages\django\db\backends\base\base.py", line 282, in ensure_connection
+    self.connect()
+  File "F:\sistemaEmprestimo\venv\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "F:\sistemaEmprestimo\venv\lib\site-packages\django\db\backends\base\base.py", line 263, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "F:\sistemaEmprestimo\venv\lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "F:\sistemaEmprestimo\venv\lib\site-packages\django\db\backends\mysql\base.py", line 247, in get_new_connection
+    connection = Database.connect(**conn_params)
+  File "F:\sistemaEmprestimo\venv\lib\site-packages\pymysql\connections.py", line 353, in __init__
+    self.connect()
+  File "F:\sistemaEmprestimo\venv\lib\site-packages\pymysql\connections.py", line 664, in connect
+    raise exc
+django.db.utils.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente)")
